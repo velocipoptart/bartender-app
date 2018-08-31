@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Order;
+use DB;
 
 class OrdersController extends Controller
 {
@@ -14,7 +15,7 @@ class OrdersController extends Controller
      */
     public function index()
     {
-        $orders = Order::all();
+        $orders = Order::orderBy('created_at', 'desc')->get();
         return view ('orders.index')->with('orders', $orders);
     }
 
@@ -25,7 +26,7 @@ class OrdersController extends Controller
      */
     public function create()
     {
-        //
+        return view('orders.create');
     }
 
     /**
@@ -36,7 +37,19 @@ class OrdersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required',
+
+        ]);
+        //Create Order
+        $order = new Order;
+        $order->name = $request->input('name');
+        $order->drink = $request->input('drink');
+        $order->note = $request->input('note');
+        $order->numOfSameItems = $request->input('numOfSameItems');
+        $order->save();
+
+        return redirect('/orders')->with('success', 'Order Created');
     }
 
     /**

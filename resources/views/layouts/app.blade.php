@@ -11,12 +11,14 @@
     </head>
     <body>
         <div class="container">
+
             <a href="/">Home</a>
             <a href="/about">about</a>
-            <a href="/">Order</a>
+            <a href="/orders/create">Order</a>
             <a href="/orders">queue(employee only)</a>
         </div>
         <div class="container">
+            @include('inc.messages')
             @yield('content')
         </div>
 
