@@ -10,12 +10,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
+            <li class="nav-link"><a href="/">Home</a></li>
+            <li class="nav-link"><a href="/about">about</a></li>
+            <li class="nav-link"><a href="/orders/create">Order</a></li>
+            <li class="nav-link"><a href="/orders">queue(employee only)</a></li>
 
             </ul>
-            <a href="/">Home</a>
-            <a href="/about">about</a>
-            <a href="/orders/create">Order</a>
-            <a href="/orders">queue(employee only)</a>
+
 
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">

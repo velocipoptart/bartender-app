@@ -9,7 +9,8 @@
         </div>
         <div>
             {{Form::label('drink', 'Drink')}}
-            {{Form::text('drink', '', ['class' => 'form-control', 'placeholder' => 'Drink'])}}
+            {{  Form::select('drink', ['Beer' => 'Beer', 'Whiskey' => 'Whiskey', 'Absinthe' => 'Absinthe', 'CHoco Milk' => 'CHoco Milk'],  'Beer', ['class' => 'form-control' ]) }}
+
         </div>
         <div>
             {{Form::label('note', 'Note')}}
