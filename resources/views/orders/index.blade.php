@@ -11,6 +11,7 @@
             <h3>Notes: {{$order->note}}</h3>
             <h3>How many: {{$order->numOfSameItems}}</h3>
             <small>Created at: {{$order->created_at}}</small>
+            <a href="/orders/{{$order->id}}">Show</a>
             </div>
         @endforeach
     @endif

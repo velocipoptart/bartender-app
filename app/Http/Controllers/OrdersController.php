@@ -60,7 +60,8 @@ class OrdersController extends Controller
      */
     public function show($id)
     {
-        //
+        $order = Order::find($id);
+        return view('orders.show')->with('order', $order);
     }
 
     /**
@@ -71,7 +72,8 @@ class OrdersController extends Controller
      */
     public function edit($id)
     {
-        //
+        $order = Order::find($id);
+        return view('orders.edit')->with('order', $order);
     }
 
     /**
@@ -83,7 +85,19 @@ class OrdersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required',
+
+        ]);
+        //Create Order
+        $order = Order::find($id);
+        $order->name = $request->input('name');
+        $order->drink = $request->input('drink');
+        $order->note = $request->input('note');
+        $order->numOfSameItems = $request->input('numOfSameItems');
+        $order->save();
+
+        return redirect('/orders')->with('success', 'Order Updated');
     }
 
     /**
@@ -94,6 +108,8 @@ class OrdersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $order = Order::find($id);
+        $order->delete();
+        return redirect('/orders')->with('success', 'Order Removed');
     }
 }

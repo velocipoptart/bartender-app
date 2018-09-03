@@ -1,17 +1,19 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Orders In Progress</h1>
-    @if(count($orders) >= 1)
-        @foreach ($orders as $order)
-            <div>
-            <h3>ID: {{$order->id}}</h3>
-            <h3>In Progress: {{$order->inProgress}}</h3>
-            <h3>Notes: {{$order->note}}</h3>
-            <h3>Number of same items: {{$order->numOfSameItems}}</h3>
-            <h3>Order is ready: {{$order->orderIsReady}}</h3>
-            <small>Created at: {{$order->created_at}}</small>
-            </div>
-        @endforeach
-    @endif
+    <a href="/orders">Back</a>
+    <h1>{{$order->name}}</h1>
+    <div>
+        <h3>Drink: {{$order->drink}}</h3>
+        <h3>Notes: {{$order->note}}</h3>
+        <h3>How many: {{$order->numOfSameItems}}</h3>
+        <small>Created at: {{$order->created_at}}</small>
+        <hr>
+        <a href="/orders/{{$order->id}}/edit">Edit</a>
+        {{Form::open(['action' => ['OrdersController@destroy', $order->id], 'method' => 'POST'])}}
+            {{Form::hidden('_method', 'DELETE')}}
+            {{Form::submit('Delete')}}
+        {{Form::close()}}
+    </div>
+
 @endsection

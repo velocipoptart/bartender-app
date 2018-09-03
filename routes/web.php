@@ -17,3 +17,6 @@ Route::get('/order', 'PagesController@order');
 Route::get('/queue', 'PagesController@queue');
 
 Route::resource('orders', 'OrdersController');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
