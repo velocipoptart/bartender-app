@@ -20,3 +20,9 @@ Route::resource('orders', 'OrdersController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/menu', 'MenuController@menu');
+Route::resource('menu', 'MenuController');
+Route::get('/drinks', 'MenuController@drinks');
+Route::get('/specials', 'MenuController@specials');
+Route::get('/food', 'MenuController@food');

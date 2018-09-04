@@ -8,7 +8,7 @@
         <h3>Notes: {{$order->note}}</h3>
         <h3>How many: {{$order->numOfSameItems}}</h3>
         <hr>
-        <small>Created at: {{$order->created_at}}</small><br>
+        <small>Created at: {{$order->created_at->format('H:i')}}</small><br>
 
         <div class="d-flex flex-row justify-content-end ">
             <button type ="button" class="btn btn-primary"><a class="text-white"href="/orders/{{$order->id}}/edit">Edit</a></button>

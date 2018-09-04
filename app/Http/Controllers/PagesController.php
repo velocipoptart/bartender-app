@@ -19,5 +19,4 @@ class PagesController extends Controller
     public function queue(){
         return view('pages.queue');
     }
-
 }

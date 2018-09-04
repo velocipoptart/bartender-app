@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+<nav class="navbar navbar-expand-md navbar-light navbar-laravel bg-info">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
             {{ config('app.name', 'Laravel') }}
@@ -10,10 +10,11 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
-            <li class="nav-link"><a href="/">Home</a></li>
-            <li class="nav-link"><a href="/about">about</a></li>
-            <li class="nav-link"><a href="/orders/create">Order</a></li>
-            <li class="nav-link"><a href="/orders">queue(employee only)</a></li>
+            <li class="nav-link"><a class="text-black-50" href="/">Home</a></li>
+            <li class="nav-link"><a class="text-black-50" href="/about">About</a></li>
+            <li class="nav-link"><a class="text-black-50" href="/menu">Menu</a></li>
+            <li class="nav-link"><a class="text-black-50" href="/orders/create">Order</a></li>
+            <li class="nav-link"><a class="text-black-50" href="/orders">Queue(employee only)</a></li>
 
             </ul>
 
@@ -23,10 +24,10 @@
                 <!-- Authentication Links -->
                 @guest
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        <a class="nav-link text-black-50" href="{{ route('login') }}">{{ __('Login') }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                        <a class="nav-link text-black-50" href="{{ route('register') }}">{{ __('Register') }}</a>
                     </li>
                 @else
                     <li class="nav-item dropdown">
